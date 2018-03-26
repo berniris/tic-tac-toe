@@ -1,0 +1,40 @@
+body {
+  background-color: #585884;
+}
+
+h1 {
+  font-family: 'Mina', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.tic-tac-board {
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+  width: 600px;
+  height: 600px;
+  background-color: #ffffff;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.box {
+  border: 5px solid #585884;
+  color: #585884;
+}
+
+p {
+  font-size: 130px;
+  font-family: 'IBM Plex Mono', monospace;
+  position: relative;
+  top: -120px;
+  left: 45px;
+}
+
+
+
