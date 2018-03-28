@@ -1,52 +1,72 @@
-$(document).ready(function() {
-const body = $('body');
-const game = $('.tic-tac-board');
-//let x = $('<p>X</p>').addClass('x');
-//let o = $('<p>O</p>').addClass("o");
-const box = $('.box');
-let player;
-let computer;
+$(document).ready(function () {
+  const body = $('body');
+  const game = $('.tic-tac-board');
+  const boxes = $('.box');
+  // const X = $('<p>X</p>');
+  // const O = $('<p>O</p>');
+  let currentPlayer = "X";
+  let turnCount = 1;
 
+game.click(playGame);
 
-function whoPlaysFirst () {
-  const randomNumComp = Math.floor(Math.random() * 20);
-  const randomNumPlayer = Math.floor(Math.random() *20);
-   console.log(randomNumComp);
-   console.log(randomNumPlayer);
+// it needs to place the x or o, if/if else, else switch players
 
-  if (randomNumComp < randomNumPlayer) {
-    // player = o;
-    // computer = x;
-    // console.log('Player1 is' + player);
-    alert("You are" + " " + "X" + " " + " and get first move. Please click on a box on the grid.");
-    playGame();
+  function playGame (event) {
+
+    $(event.target).append(`<p>${currentPlayer}</p>`);
+
+    if(checkForWin() === true) {
+      gameOver(currentPlayer);
+    } else if(turnCount === 9) {
+  gameOver(null);
   } else {
-    // computer = o;
-    // player = x;
-    // // console.log('Computer is' + computer);
-    alert ("Computer gets first move.");
-    computerMove();
-  }
+    switchPlayer();
+    turnCount++;
+    console.log(turnCount);
+}
 }
 
-whoPlaysFirst();
-
-function computerMove() {
-  // console.log(firstTurn);
-  alert(`Computer has gone. You're turn now. Click on a grid box`);
-  const firstTurn = Math.floor(Math.random() * 8);
-    $('.box').eq(firstTurn).append('<p>O</p>').addClass('p');
+function switchPlayer() {
+     if (currentPlayer === "X") {
+     currentPlayer = "O";
+    } else {
+      currentPlayer = "X";
+    }
 }
 
-computerMove();
+function checkForWin () {
+if (($('.grid1 p').text() === currentPlayer && $('.grid2 p').text() === currentPlayer && $('.grid3 p').text() === currentPlayer) ||
+    ($('.grid4 p').text() === currentPlayer && $('.grid5 p').text() === currentPlayer && $('.grid6 p').text() === currentPlayer) ||
+    ($('.grid7 p').text() === currentPlayer && $('.grid8 p').text() === currentPlayer && $('.grid9 p').text() === currentPlayer) ||
+    ($('.grid1 p').text() === currentPlayer && $('.grid4 p').text() === currentPlayer && $('.grid7 p').text() === currentPlayer) ||
+    ($('.grid2 p').text() === currentPlayer && $('.grid5 p').text() === currentPlayer && $('.grid8 p').text() === currentPlayer) ||
+    ($('.grid3 p').text() === currentPlayer && $('.grid6 p').text() === currentPlayer && $('.grid9 p').text() === currentPlayer) ||
+    ($('.grid3 p').text() === currentPlayer && $('.grid5 p').text() === currentPlayer && $('.grid7 p').text() === currentPlayer) ||
+    ($('.grid1 p').text() === currentPlayer && $('.grid5 p').text() === currentPlayer && $('.grid9 p').text() === currentPlayer))
+{
+  return true;
+} else {
+  return false;
+}
+}
 
-function playGame () {
-  let counter;
-  alert(`You're turn again. Please select a box`);
-  $(box).on('click', function () {
-    $(this).append('<p>X</p>').addClass('p');
-    console.log($(this));
-  });
-};
-  //playGame();
-});
+checkForWin();
+
+function gameOver (winner) {
+if(winner) {
+  alert(`${winner} won`);
+} else {
+  alert('Stalemate!');
+}
+game.off('click', playGame);
+resetGame();
+turnCount = 1;
+}
+
+function resetGame() {
+game.click(playGame);
+boxes.html("");
+}
+
+
+
