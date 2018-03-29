@@ -67,6 +67,6 @@ function resetGame() {
 game.click(playGame);
 boxes.html("");
 }
-
+});
 
 
