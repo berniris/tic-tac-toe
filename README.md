@@ -1,4 +1,4 @@
-# Tic Tac Toe Lab
+# Tic Tac Toe 
 
 ![tic-tac-toe meme](assets/ttt_meme.jpg)
 
@@ -24,23 +24,7 @@
     - `npm i` (this will get all the tools necessary for this exercise)
 1. You have been given blank index.html, script.js, and style.css files. Please use those files to complete your work.
 
-## Bonus
-* Use an HTML form to allow players to enter their names
-* Style it! give it a personal flavor.
-* Check out the website [bitbaloon](https://www.bitballoon.com/) and host your game there.
-
-## Ultra Bonus
-* We once had a student implement an Artifical Intelligence (AI)
-  opponent. If you really need a challenge, write some code that will
-  play a game of Tic Tac Toe against you. (Hint: look into the minimax
-  algorithm).
 
 
-## Deliverable
 
-* Everyone's game will look different but you can check out the following screenshots to get some basic design ideas.
-
-![Screen-shot](assets/kz2L9f9.png)
-![Screen-shot](assets/d8lFshD.png)
-![Screen-shot](assets/Jw6hhcA.png)
 
