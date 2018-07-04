@@ -10,31 +10,29 @@ h1 {
 
 .tic-tac-board {
   display: grid;
-  grid-template-rows: 100px 100px 100px;
-  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px;
   width: 300px;
   height: 300px;
-  background-color: #ffffff;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  margin: 0 auto;
+  left: 50%;
+  right: 50%;
 }
 
 .box {
-  border: 5px solid #585884;
-  color: #585884;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
-/*p {
-  font-size: 130px;
-  font-family: 'IBM Plex Mono', monospace;
-  position: relative;
-  top: -120px;
-  left: 45px;
-}*/
+.ramen {
+  background-image: url("https://image.flaticon.com/icons/png/128/774/774953.png");
+  background-size: contain;
+}
+
+.sushi {
+  background-image: url("https://image.flaticon.com/icons/png/128/774/774912.png");
+  background-size: contain;
+}
 
 
 
